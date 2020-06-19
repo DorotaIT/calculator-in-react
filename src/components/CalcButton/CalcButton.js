@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import './CalcButton.css'
 
-export class CalcButton extends Component {
+export const CalcButton = () => {
+    
 
-    render() {
-        return (
-            <div>
+    return (
+        <div>
            
-            </div>
-        )
-    }
+        </div>
+       )
 }

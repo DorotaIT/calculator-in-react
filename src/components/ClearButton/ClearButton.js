@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import './ClearButton.css'
 
-export class ClearButton extends Component {
+export const ClearButton = () => {
 
-    render() {
-        return (
-            <div>
+
+    return (
+        <div>
            
-            </div>
-        )
-    }
+        </div>
+    )
 }
