@@ -1,4 +1,19 @@
 .default-button {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    border: 0.5px solid rgb(92, 92, 92);
+}
+
+button:active, button:focus, button:visited, button:hover {
+    border: 0.5px solid rgb(92, 92, 92) !important;
+}
+
+button:active, button:focus {
+    color: #fff;
+    background-color: #6c757d !important;
+    border-color: rgb(92, 92, 92) !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
