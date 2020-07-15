@@ -21,11 +21,6 @@ export const Calculator = () => {
 
         if (type === "C") {
             handleClearAll();
-        } else if (type === "=") {
-            // handleCounting();
-            // doMath();
-            // console.log(doMath(), handleCounting());
-            console.log(storedNumber);
         }
     }
 
@@ -41,22 +36,25 @@ export const Calculator = () => {
     }
 
     function doMath() {
-        handleCounting();
         setSecondNumber('');
+
+        return handleCounting();
     }
 
     function handleActionClick(type) {
         if (type === "C") {
             handleClearAll();
         } else if (type === "=") {
-            doMath();
+            const result = doMath();
+            displayNumbers(`${type}${result}`);
         } else {
             setSymbol(type);
             if (secondNumber !== '' && storedNumber !== '') {
                doMath();
             }
+            displayNumbers(type);
         }
-        displayNumbers(type);
+        
     }
 
     function getPlaceholder() {
@@ -76,20 +74,25 @@ export const Calculator = () => {
     function handleCounting() {
         const leftNumber = parseInt(storedNumber);
         const rightNumber = parseInt(secondNumber);
-
+        let result;
+        
         switch (symbol) {
             case '+':
-                setStoredNumber(leftNumber + rightNumber);
-                break;
+                result = leftNumber + rightNumber;
+                setStoredNumber(result);
+                return result;
             case '-':
-                setStoredNumber(leftNumber - rightNumber);
-                break;
+                result = leftNumber - rightNumber;
+                setStoredNumber(result);
+                return result;
             case '*':
-                setStoredNumber(leftNumber * rightNumber);
-                break;
+                result = leftNumber * rightNumber;
+                setStoredNumber(result);
+                return result;
             case '/':
-                setStoredNumber(leftNumber / rightNumber);
-                break;
+                result = leftNumber / rightNumber;
+                setStoredNumber(result);
+                return result;
             default:
         }
     }
