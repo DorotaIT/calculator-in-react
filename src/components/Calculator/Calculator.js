@@ -18,6 +18,7 @@ export const Calculator = () => {
     function displayNumbers(type) {
         const displayNumbers = displayMath.concat(type);
         setDisplayMath(displayNumbers);
+        console.log(symbol);
 
         if (type === "C") {
             handleClearAll();
