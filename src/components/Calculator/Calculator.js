@@ -8,6 +8,13 @@ import './Calculator.css';
 // możliwość np dodania wielu liczb do siebie bez znaku =
 // opcjonalnie dodanie miedzy buttonami odstępu lub bordera
 // po kliknięciu na znak następuje zmiana na nowy znak i usuniecie poprzedniego
+function replaceChar(origString, replaceChar, index) {
+    let firstPart = origString.substr(0, index);
+    let lastPart = origString.substr(index + 1);
+      
+    let newString = firstPart + replaceChar + lastPart;
+    return newString;
+} 
 
 export const Calculator = () => {
     const [storedNumber, setStoredNumber] = useState('');
@@ -155,4 +162,5 @@ export const Calculator = () => {
         </div>
     )
 };
+
 
